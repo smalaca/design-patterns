@@ -7,14 +7,14 @@ public class FlyweightFactory {
     private final Map<FlyweightState, Flyweight> cache = new HashMap<>();
 
     public Flyweight aFlyweightFor(FlyweightState state) {
-        if (flyweightNotCreatedFor(state)) {
+        if (isFlyweightNotCreatedFor(state)) {
             cache.put(state, createFlyweightFor(state));
         }
 
         return cache.get(state);
     }
 
-    private boolean flyweightNotCreatedFor(FlyweightState state) {
+    private boolean isFlyweightNotCreatedFor(FlyweightState state) {
         return !cache.containsKey(state);
     }
 
