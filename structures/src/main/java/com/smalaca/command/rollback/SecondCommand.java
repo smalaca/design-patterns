@@ -7,7 +7,7 @@ class SecondCommand implements Command {
     }
 
     @Override
-    public void rollback(Command command) {
+    public void rollback() {
 
     }
 }
