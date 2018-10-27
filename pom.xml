@@ -12,6 +12,7 @@
     <modules>
         <module>structures</module>
         <module>examples</module>
+        <module>withoutpatterns</module>
     </modules>
 
     <dependencies>
