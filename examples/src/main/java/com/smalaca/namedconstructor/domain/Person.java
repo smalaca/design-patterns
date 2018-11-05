@@ -1,4 +1,4 @@
-package com.smalaca.namedconstructor;
+package com.smalaca.namedconstructor.domain;
 
 public class Person {
     private Name name;
