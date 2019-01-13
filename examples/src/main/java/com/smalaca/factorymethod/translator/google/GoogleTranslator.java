@@ -1,4 +1,4 @@
-package com.smalaca.factorymethod.external.google;
+package com.smalaca.factorymethod.translator.google;
 
 public class GoogleTranslator {
     public String toPolish(String word) {

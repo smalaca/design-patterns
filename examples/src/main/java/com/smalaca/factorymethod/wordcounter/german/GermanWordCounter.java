@@ -1,6 +1,7 @@
-package com.smalaca.factorymethod.domain;
+package com.smalaca.factorymethod.wordcounter.german;
 
-import com.smalaca.factorymethod.external.dictionary.german.GermanGovWebDictionary;
+import com.smalaca.factorymethod.domain.WordCounter;
+import com.smalaca.factorymethod.translator.dictionary.german.GermanGovWebDictionary;
 
 class GermanWordCounter implements WordCounter {
     private final GermanGovWebDictionary dictionary;

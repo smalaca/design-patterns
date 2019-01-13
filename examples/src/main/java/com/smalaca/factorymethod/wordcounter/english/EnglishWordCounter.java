@@ -1,6 +1,7 @@
-package com.smalaca.factorymethod.domain;
+package com.smalaca.factorymethod.wordcounter.english;
 
-import com.smalaca.factorymethod.external.google.GoogleTranslator;
+import com.smalaca.factorymethod.domain.WordCounter;
+import com.smalaca.factorymethod.translator.google.GoogleTranslator;
 
 class EnglishWordCounter implements WordCounter {
     private final GoogleTranslator translator;

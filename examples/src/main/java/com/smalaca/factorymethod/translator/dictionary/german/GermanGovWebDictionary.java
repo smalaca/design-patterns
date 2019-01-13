@@ -1,4 +1,4 @@
-package com.smalaca.factorymethod.external.dictionary.german;
+package com.smalaca.factorymethod.translator.dictionary.german;
 
 public class GermanGovWebDictionary {
     public String translate(String from, String word) {
