@@ -17,7 +17,7 @@ public class PersonService {
         } else if (mum.isPresent()) {
             return Person.withMum(name, mum.get());
         } else if (dad.isPresent()) {
-            return Person.withMum(name, dad.get());
+            return Person.withDad(name, dad.get());
         } else {
             return Person.orphan(name);
         }
