@@ -1,9 +1,9 @@
 package com.smalaca.prototype.domain;
 
-class Folder implements Node {
+public class Folder implements Node {
     private final String name;
 
-    Folder(String name) {
+    public Folder(String name) {
         this.name = name;
     }
 

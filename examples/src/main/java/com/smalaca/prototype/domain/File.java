@@ -1,9 +1,9 @@
 package com.smalaca.prototype.domain;
 
-class File implements Node {
+public class File implements Node {
     private String name;
 
-    File(String name) {
+    public File(String name) {
         this.name = name;
     }
 
