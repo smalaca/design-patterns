@@ -1,4 +1,4 @@
-package com.smalaca.strategy.xml;
+package com.smalaca.strategy.report.xml;
 
 import com.smalaca.strategy.report.Report;
 import com.smalaca.strategy.report.ReportParameters;

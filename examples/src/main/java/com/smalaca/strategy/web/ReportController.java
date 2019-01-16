@@ -6,7 +6,7 @@ import com.smalaca.strategy.report.ReportFactory;
 import com.smalaca.strategy.report.ReportStrategy;
 import com.smalaca.strategy.report.ReportType;
 import com.smalaca.strategy.report.pdf.PdfReportStrategy;
-import com.smalaca.strategy.xml.XmlReportStrategy;
+import com.smalaca.strategy.report.xml.XmlReportStrategy;
 
 import java.util.Map;
 
