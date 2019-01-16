@@ -20,7 +20,7 @@ public class AuthenticationController implements AuthenticationObservable {
     public void login(String name, Password password) {
         AuthResult result = authenticationService.login(name, password);
 
-        if (result.faild()) {
+        if (result.failed()) {
             if (result.wasThirdAttempt()) {
                 observers.forEach(observer -> observer.notifyOf(result));
             }
