@@ -1,6 +1,6 @@
-package com.smalaca.state.auth;
+package com.smalaca.state;
 
-import com.smalaca.state.auth.state.UserState;
+import com.smalaca.state.userstate.UserState;
 
 public class User {
     private final String name;

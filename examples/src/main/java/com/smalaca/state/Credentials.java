@@ -1,4 +1,4 @@
-package com.smalaca.state.auth;
+package com.smalaca.state;
 
 public interface Credentials {
     void change(Password password);

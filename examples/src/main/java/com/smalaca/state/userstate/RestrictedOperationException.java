@@ -1,4 +1,4 @@
-package com.smalaca.state.auth.state;
+package com.smalaca.state.userstate;
 
 class RestrictedOperationException extends RuntimeException {
     RestrictedOperationException(String message) {

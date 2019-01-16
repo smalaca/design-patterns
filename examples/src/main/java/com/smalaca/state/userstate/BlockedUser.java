@@ -1,7 +1,7 @@
-package com.smalaca.state.auth.state;
+package com.smalaca.state.userstate;
 
-import com.smalaca.state.auth.Credentials;
-import com.smalaca.state.auth.Password;
+import com.smalaca.state.Credentials;
+import com.smalaca.state.Password;
 
 public class BlockedUser implements UserState {
     @Override
