@@ -1,4 +1,4 @@
-package com.smalaca.abstractfactory;
+package com.smalaca.abstractfactory.product;
 
 public interface AbstractFactory {
     ProductA productA();
