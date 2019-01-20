@@ -1,17 +1,24 @@
-package com.smalaca.builder.complex;
+package com.smalaca.builder.complex.product.first;
+
+import com.smalaca.builder.complex.client.product.PartA;
+import com.smalaca.builder.complex.client.product.PartB;
+import com.smalaca.builder.complex.client.product.PartC;
+import com.smalaca.builder.complex.client.product.PartD;
+import com.smalaca.builder.complex.client.product.Product;
+import com.smalaca.builder.complex.client.product.ProductBuilder;
 
 import java.util.Optional;
 
 import static java.util.Optional.empty;
 import static java.util.Optional.of;
 
-public class FirstBuilder implements Builder {
+public class FirstProductBuilder implements ProductBuilder {
     private Optional<PartA> partA;
     private Optional<PartB> partB;
     private Optional<PartC> partC;
     private Optional<PartD> partD;
 
-    public FirstBuilder() {
+    public FirstProductBuilder() {
         reset();
     }
 
@@ -23,7 +30,7 @@ public class FirstBuilder implements Builder {
         partD = empty();
     }
 
-    public Builder with(PartA partA) {
+    public ProductBuilder with(PartA partA) {
         this.partA = of(partA);
         return this;
     }
@@ -32,7 +39,7 @@ public class FirstBuilder implements Builder {
         this.partB = of(partB);
     }
 
-    public Builder withPartC() {
+    public ProductBuilder withPartC() {
         this.partC = of(new PartC());
         return this;
     }
