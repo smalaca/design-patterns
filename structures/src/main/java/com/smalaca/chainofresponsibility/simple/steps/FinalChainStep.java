@@ -1,4 +1,4 @@
-package com.smalaca.chainofresponsibility.simple;
+package com.smalaca.chainofresponsibility.simple.steps;
 
 class FinalChainStep implements ChainStep {
     @Override
