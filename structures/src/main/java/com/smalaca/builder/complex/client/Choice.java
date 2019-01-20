@@ -1,7 +1,7 @@
 package com.smalaca.builder.complex.client;
 
 import com.google.common.collect.ImmutableMap;
-import com.smalaca.builder.complex.client.product.ProductBuilder;
+import com.smalaca.builder.complex.domain.product.ProductBuilder;
 import com.smalaca.builder.complex.product.first.FirstProductBuilder;
 import com.smalaca.builder.complex.product.second.SecondProductBuilder;
 

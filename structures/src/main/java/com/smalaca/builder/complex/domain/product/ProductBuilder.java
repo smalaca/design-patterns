@@ -1,4 +1,4 @@
-package com.smalaca.builder.complex.client.product;
+package com.smalaca.builder.complex.domain.product;
 
 public interface ProductBuilder {
     ProductBuilder with(PartA partA);
