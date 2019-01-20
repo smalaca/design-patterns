@@ -1,4 +1,4 @@
-package com.smalaca.command.rollback;
+package com.smalaca.command.rollback.command;
 
 public interface Command {
     void execute();

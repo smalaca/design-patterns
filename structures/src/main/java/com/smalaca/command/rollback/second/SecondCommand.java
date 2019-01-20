@@ -1,4 +1,6 @@
-package com.smalaca.command.rollback;
+package com.smalaca.command.rollback.second;
+
+import com.smalaca.command.rollback.command.Command;
 
 class SecondCommand implements Command {
     @Override
