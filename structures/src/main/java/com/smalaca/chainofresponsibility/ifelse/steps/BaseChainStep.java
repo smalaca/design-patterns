@@ -1,4 +1,4 @@
-package com.smalaca.chainofresponsibility.ifelse;
+package com.smalaca.chainofresponsibility.ifelse.steps;
 
 abstract class BaseChainStep implements ChainStep {
     private final ChainStep nextStep;

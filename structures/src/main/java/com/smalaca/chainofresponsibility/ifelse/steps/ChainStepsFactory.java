@@ -1,4 +1,4 @@
-package com.smalaca.chainofresponsibility.ifelse;
+package com.smalaca.chainofresponsibility.ifelse.steps;
 
 public class ChainStepsFactory {
     public ChainStep steps() {

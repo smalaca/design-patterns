@@ -1,7 +1,7 @@
-package com.smalaca.chainofresponsibility.ifelse;
+package com.smalaca.chainofresponsibility.ifelse.steps;
 
-class SecondChainStep extends BaseChainStep {
-    protected SecondChainStep(ChainStep nextStep) {
+class FirstChainStep extends BaseChainStep {
+    FirstChainStep(ChainStep nextStep) {
         super(nextStep);
     }
 
