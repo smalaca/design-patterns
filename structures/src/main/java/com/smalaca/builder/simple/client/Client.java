@@ -22,8 +22,4 @@ public class Client {
         Product product = productBuilder.build();
         product.doSomething();
     }
-
-    private boolean validate(Input input) {
-        return false;
-    }
 }
