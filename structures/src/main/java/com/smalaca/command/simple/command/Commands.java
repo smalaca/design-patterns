@@ -1,21 +1,16 @@
-package com.smalaca.command.simple;
+package com.smalaca.command.simple.command;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Invoker {
+public class Commands {
     private final List<Command> commands = new ArrayList<>();
 
     public void add(Command command) {
         commands.add(command);
     }
 
-    public void doSomething() {
-        instruction();
+    public void execute() {
         commands.forEach(Command::execute);
-    }
-
-    private void instruction() {
-
     }
 }
