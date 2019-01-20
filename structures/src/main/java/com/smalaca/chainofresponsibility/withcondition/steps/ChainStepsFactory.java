@@ -1,4 +1,4 @@
-package com.smalaca.chainofresponsibility.withcondition;
+package com.smalaca.chainofresponsibility.withcondition.steps;
 
 public class ChainStepsFactory {
     public ChainStep steps() {

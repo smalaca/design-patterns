@@ -1,8 +1,10 @@
-package com.smalaca.chainofresponsibility.withcondition;
+package com.smalaca.chainofresponsibility.withcondition.steps;
 
-class SecondChainStep extends BaseChainStep {
-    protected SecondChainStep(ChainStep nextStep) {
-        super(nextStep);
+class SecondChainStep implements ChainStep {
+    private final ChainStep nextStep;
+
+    SecondChainStep(ChainStep nextStep) {
+        this.nextStep = nextStep;
     }
 
     @Override
@@ -11,7 +13,7 @@ class SecondChainStep extends BaseChainStep {
             doItsOwnStuff();
         }
 
-        nextStep().doSomething();
+        nextStep.doSomething();
     }
 
     private boolean isConditionFulfilled() {
