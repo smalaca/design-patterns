@@ -1,4 +1,4 @@
-package com.smalaca.composite;
+package com.smalaca.composite.component;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -14,8 +14,8 @@ public class Composite implements Component {
         components.remove(component);
     }
 
-    public Collection<Component> components() {
-        return components;
+    public boolean contains(Component component) {
+        return components.contains(component);
     }
 
     @Override
