@@ -1,4 +1,4 @@
-package com.smalaca.builder.together;
+package com.smalaca.builder.together.domain.product;
 
 public class Product {
     private final PartA partA;
@@ -9,6 +9,10 @@ public class Product {
     private Product(PartA partA, PartB partB) {
         this.partA = partA;
         this.partB = partB;
+    }
+
+    public void doSomething() {
+
     }
 
     public static class ProductBuilder {
