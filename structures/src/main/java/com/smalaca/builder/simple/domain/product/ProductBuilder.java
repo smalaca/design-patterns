@@ -1,4 +1,4 @@
-package com.smalaca.builder.simple;
+package com.smalaca.builder.simple.domain.product;
 
 public class ProductBuilder {
     private final Product product;
