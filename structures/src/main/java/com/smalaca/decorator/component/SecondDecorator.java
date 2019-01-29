@@ -1,7 +1,7 @@
-package com.smalaca.decorator;
+package com.smalaca.decorator.component;
 
 public class SecondDecorator extends BaseDecorator {
-    protected SecondDecorator(Component component) {
+    public SecondDecorator(Component component) {
         super(component);
     }
 

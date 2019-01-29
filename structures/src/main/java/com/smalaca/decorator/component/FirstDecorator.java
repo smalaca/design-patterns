@@ -1,4 +1,4 @@
-package com.smalaca.decorator;
+package com.smalaca.decorator.component;
 
 public class FirstDecorator extends BaseDecorator {
     public FirstDecorator(Component component) {

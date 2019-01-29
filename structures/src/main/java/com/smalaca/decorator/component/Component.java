@@ -1,4 +1,4 @@
-package com.smalaca.decorator;
+package com.smalaca.decorator.component;
 
 public interface Component {
     Result doSomething();

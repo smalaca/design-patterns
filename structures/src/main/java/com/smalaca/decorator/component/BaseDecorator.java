@@ -1,6 +1,6 @@
-package com.smalaca.decorator;
+package com.smalaca.decorator.component;
 
-abstract public class BaseDecorator implements Component {
+abstract class BaseDecorator implements Component {
     private final Component component;
 
     protected BaseDecorator(Component component) {
