@@ -1,4 +1,9 @@
-package com.smalaca.facade;
+package com.smalaca.facade.system;
+
+import com.smalaca.facade.system.first.FirstSubsystem;
+import com.smalaca.facade.system.fourth.FourthSubsystem;
+import com.smalaca.facade.system.second.SecondSubsystem;
+import com.smalaca.facade.system.third.ThirdSubsystem;
 
 public class Facade {
     private final FirstSubsystem firstSubsystem;
