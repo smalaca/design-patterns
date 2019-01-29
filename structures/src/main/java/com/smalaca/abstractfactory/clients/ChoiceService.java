@@ -13,7 +13,7 @@ public class ChoiceService {
         this.usageService = usageService;
     }
 
-    public void chose(AbstractFactoryType type) {
+    public void choose(AbstractFactoryType type) {
         usageService.change(anAbstractFactory(type));
     }
 
