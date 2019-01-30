@@ -9,13 +9,9 @@ public class FirstPrototype implements Prototype {
         this.partB = partB;
     }
 
-    private FirstPrototype(FirstPrototype prototype) {
-        this(prototype.partA, prototype.partB);
-    }
-
     @Override
     public Prototype clone() {
-        return new FirstPrototype(this);
+        return new FirstPrototype(partA, partB);
     }
 
     @Override
