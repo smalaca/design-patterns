@@ -1,9 +1,9 @@
-package com.smalaca.state.interfacebased;
+package com.smalaca.state.interfacebased.task;
 
-public class Context {
+public class Task {
     private State state;
 
-    public Context(State state) {
+    public Task(State state) {
         change(state);
     }
 

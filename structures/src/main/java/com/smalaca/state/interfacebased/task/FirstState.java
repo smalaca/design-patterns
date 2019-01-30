@@ -1,4 +1,4 @@
-package com.smalaca.state.interfacebased;
+package com.smalaca.state.interfacebased.task;
 
 public class FirstState implements State {
     @Override
@@ -7,7 +7,7 @@ public class FirstState implements State {
     }
 
     @Override
-    public void setContext(Context context) {
+    public void setContext(Task task) {
 
     }
 }
