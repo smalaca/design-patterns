@@ -1,9 +1,9 @@
-package com.smalaca.state.enumbased;
+package com.smalaca.state.enumbased.task;
 
-public class Context {
+public class Task {
     private State state;
 
-    public Context(State state) {
+    public Task(State state) {
         change(state);
     }
 
