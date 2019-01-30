@@ -10,4 +10,8 @@ public class Singleton {
     public static Singleton instance() {
         return SINGLETON;
     }
+
+    public void doStuff() {
+        // some code
+    }
 }
