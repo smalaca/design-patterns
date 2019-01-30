@@ -1,4 +1,4 @@
-package com.smalaca.memento;
+package com.smalaca.memento.originator;
 
 public class Originator {
     private FirstValue firstValue;
@@ -8,7 +8,7 @@ public class Originator {
         changeTo(firstValue, secondValue);
     }
 
-    public void changeTo(FirstValue firstValue, SecondValue secondValue) {
+    void changeTo(FirstValue firstValue, SecondValue secondValue) {
         this.firstValue = firstValue;
         this.secondValue = secondValue;
     }

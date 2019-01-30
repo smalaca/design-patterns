@@ -1,4 +1,4 @@
-package com.smalaca.memento;
+package com.smalaca.memento.originator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +10,7 @@ public class Caretaker {
         mementos.add(memento);
     }
 
-    public Memento getMemento(int index) {
-        return mementos.get(index);
-    }
-
     public Memento getLast() {
-        return mementos.get(mementos.size() - 1);
+        return mementos.remove(mementos.size() - 1);
     }
 }
