@@ -1,4 +1,7 @@
-package com.smalaca.mediator.simple;
+package com.smalaca.mediator.withinterface.mediator.real;
+
+import com.smalaca.mediator.withinterface.mediator.Colleague;
+import com.smalaca.mediator.withinterface.mediator.Mediator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +11,7 @@ import java.util.function.Predicate;
 public class RealMediator implements Mediator {
     private final List<Colleague> colleagues = new ArrayList<>();
 
+    @Override
     public void add(Colleague colleague) {
         colleagues.add(colleague);
     }
