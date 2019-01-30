@@ -1,4 +1,4 @@
-package com.smalaca.observer;
+package com.smalaca.observer.publisher;
 
 import java.util.ArrayList;
 import java.util.List;
