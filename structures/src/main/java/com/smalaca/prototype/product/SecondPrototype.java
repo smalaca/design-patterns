@@ -1,4 +1,4 @@
-package com.smalaca.prototype;
+package com.smalaca.prototype.product;
 
 public class SecondPrototype implements Prototype {
     private final PartA partA;

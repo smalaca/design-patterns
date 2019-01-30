@@ -1,4 +1,4 @@
-package com.smalaca.prototype;
+package com.smalaca.prototype.product;
 
 public interface Prototype {
     Prototype clone();
