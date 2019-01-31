@@ -1,13 +1,13 @@
-package com.smalaca.strategy;
+package com.smalaca.strategy.functionality;
 
-public class Context {
+public class Functionality {
     private Strategy strategy;
 
-    public Context(Strategy strategy) {
+    public Functionality(Strategy strategy) {
         change(strategy);
     }
 
-    private void change(Strategy strategy) {
+    public void change(Strategy strategy) {
         this.strategy = strategy;
     }
 
