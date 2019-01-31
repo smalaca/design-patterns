@@ -1,4 +1,4 @@
-package com.smalaca.templatemethod;
+package com.smalaca.templatemethod.functionality;
 
 abstract public class TemplateMethod {
 
