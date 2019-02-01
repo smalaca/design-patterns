@@ -18,6 +18,6 @@ public class Client {
     }
 
     public void doSecondThing(Component component) {
-        component.accept(firstVisitor);
+        component.accept(secondVisitor);
     }
 }
