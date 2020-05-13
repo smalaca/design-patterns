@@ -9,15 +9,23 @@ public class ReportFactory {
         if (valid(reportParameters)) {
             switch (type) {
                 case XML:
-                    break;
+                    return xmlReport();
                 case PDF:
-                    break;
+                    return pdfReport();
                 default:
                     throw new UnsupportedReportTypeException(type);
             }
         }
 
         throw new InvalidReportParametersGivenException();
+    }
+
+    private Report xmlReport() {
+        return null;
+    }
+
+    private Report pdfReport() {
+        return null;
     }
 
     private boolean valid(ReportParameters reportParameters) {
