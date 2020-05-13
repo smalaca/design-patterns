@@ -21,11 +21,11 @@ public class ReportFactory {
     }
 
     private Report xmlReport() {
-        return null;
+        return new Report("xml");
     }
 
     private Report pdfReport() {
-        return null;
+        return new Report("pdf");
     }
 
     private boolean valid(ReportParameters reportParameters) {
