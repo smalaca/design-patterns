@@ -1,5 +1,5 @@
 package com.smalaca.observer.security;
 
-interface Account {
+public interface Account {
     void block();
 }

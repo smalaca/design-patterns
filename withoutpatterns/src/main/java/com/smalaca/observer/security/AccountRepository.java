@@ -1,6 +1,6 @@
 package com.smalaca.observer.security;
 
-interface AccountRepository {
+public interface AccountRepository {
     Account findOf(String userId);
 
     void save(Account account);
