@@ -3,6 +3,7 @@ package com.smalaca.simplefactory.web.wordcounter;
 import com.smalaca.simplefactory.domain.WordCounter;
 import com.smalaca.simplefactory.translator.google.GoogleTranslator;
 import com.smalaca.simplefactory.wordcounter.english.EnglishWordCounter;
+import com.smalaca.simplefactory.wordcounter.english.EnglishWordCounterFactory;
 
 public class WordCounterController {
     private WordCounter wordCounter;
@@ -15,10 +16,10 @@ public class WordCounterController {
         return aWordCounter().count(word);
     }
 
-    private WordCounter aWordCounter() {
+    @Deprecated
+    WordCounter aWordCounter() {
         if (wordCounter == null) {
-            GoogleTranslator translator = new GoogleTranslator();
-            wordCounter = new EnglishWordCounter(translator);
+            wordCounter = new EnglishWordCounterFactory().create();
         }
 
         return wordCounter;
