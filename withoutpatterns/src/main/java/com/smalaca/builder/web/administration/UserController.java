@@ -1,11 +1,6 @@
 package com.smalaca.builder.web.administration;
 
-import com.smalaca.builder.domain.Address;
-import com.smalaca.builder.domain.Mail;
-import com.smalaca.builder.domain.Name;
-import com.smalaca.builder.domain.Phone;
-import com.smalaca.builder.domain.User;
-import com.smalaca.builder.domain.UserRepository;
+import com.smalaca.builder.domain.*;
 import com.smalaca.builder.http.Request;
 import com.smalaca.builder.http.Response;
 import com.smalaca.builder.web.administration.dto.UserDto;
@@ -23,19 +18,15 @@ public class UserController {
     public Response create(Request request) {
         UserDto userDto = userDtoFactory.from(request);
 
-        Name name = new Name(userDto.firstName(), userDto.lastName());
-        Address address = new Address(userDto.street(), userDto.postalCode(), userDto.city(), userDto.country());
-        User user = new User(userDto.login(), userDto.password(), name, address);
+        UserBuilder builder = new UserBuilder()
+                .withName(userDto.firstName(), userDto.lastName())
+                .withAddress(userDto.street(), userDto.postalCode(), userDto.city(), userDto.country())
+                .withLogin(userDto.login())
+                .withPassword(userDto.password())
+                .withPhone(userDto.phone())
+                .withMail(userDto.mail());
 
-        if (userDto.hasPhone()) {
-            user.add(new Phone(userDto.phone()));
-        }
-
-        if (userDto.hasMail()) {
-            user.add(new Mail(userDto.mail()));
-        }
-
-        userRepository.save(user);
+        userRepository.save(builder.build());
 
         return Response.success();
     }
