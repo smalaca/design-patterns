@@ -7,16 +7,6 @@ import com.smalaca.adapter.external.google.GoogleTranslator;
 
 public class WordCounter {
     private final Translator translator;
-    private GoogleTranslator googleTranslator;
-    private GermanGovWebDictionary germanGovWebDictionary;
-
-    public WordCounter(GermanGovWebDictionary germanGovWebDictionary) {
-        this(new GermanTranslator(germanGovWebDictionary));
-    }
-
-    public WordCounter(GoogleTranslator googleTranslator) {
-        this(new EnglishTranslator(googleTranslator));
-    }
 
     public WordCounter(Translator translator) {
         this.translator = translator;

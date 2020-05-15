@@ -1,8 +1,9 @@
 package com.smalaca.adapter.domain;
 
 import com.smalaca.adapter.external.dictionary.german.GermanGovWebDictionary;
+import com.smalaca.adapter.external.dictionary.german.GermanTranslator;
+import com.smalaca.adapter.external.google.EnglishTranslator;
 import com.smalaca.adapter.external.google.GoogleTranslator;
-import com.smalaca.adapter.web.wordcounter.WordCounterController;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +20,7 @@ class WordCounterTest {
     void shouldTranslateFromGermanToPolish() {
         GermanGovWebDictionary germanGovWebDictionary = mock(GermanGovWebDictionary.class);
         given(germanGovWebDictionary.reversedTranslate("PL", WORD)).willReturn(TRANSLATE_WORD);
-        WordCounter wordCounter = new WordCounter(germanGovWebDictionary);
+        WordCounter wordCounter = new WordCounter(new GermanTranslator(germanGovWebDictionary));
 
         String actual = wordCounter.translateToPolish(WORD);
 
@@ -30,7 +31,7 @@ class WordCounterTest {
     void shouldTranslateFromPolishToGerman() {
         GermanGovWebDictionary germanGovWebDictionary = mock(GermanGovWebDictionary.class);
         given(germanGovWebDictionary.translate("PL", WORD)).willReturn(TRANSLATE_WORD);
-        WordCounter wordCounter = new WordCounter(germanGovWebDictionary);
+        WordCounter wordCounter = new WordCounter(new GermanTranslator(germanGovWebDictionary));
 
         String actual = wordCounter.translateFromPolish(WORD);
 
@@ -41,7 +42,7 @@ class WordCounterTest {
     void shouldTranslateFromPolishToEnglish() {
         GoogleTranslator googleTranslator = mock(GoogleTranslator.class);
         given(googleTranslator.toEnglish(WORD)).willReturn(TRANSLATE_WORD);
-        WordCounter wordCounter = new WordCounter(googleTranslator);
+        WordCounter wordCounter = new WordCounter(new EnglishTranslator(googleTranslator));
 
         String actual = wordCounter.translateFromPolish(WORD);
 
@@ -52,7 +53,7 @@ class WordCounterTest {
     void shouldTranslateFromEnglishToPolish() {
         GoogleTranslator googleTranslator = mock(GoogleTranslator.class);
         given(googleTranslator.toPolish(WORD)).willReturn(TRANSLATE_WORD);
-        WordCounter wordCounter = new WordCounter(googleTranslator);
+        WordCounter wordCounter = new WordCounter(new EnglishTranslator(googleTranslator));
 
         String actual = wordCounter.translateToPolish(WORD);
 
