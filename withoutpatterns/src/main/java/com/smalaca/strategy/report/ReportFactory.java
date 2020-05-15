@@ -28,11 +28,13 @@ public class ReportFactory {
         return new Report("pdf");
     }
 
-    private boolean valid(ReportParameters reportParameters) {
+    @Deprecated
+    boolean valid(ReportParameters reportParameters) {
         return false;
     }
 
-    private ReportParameters parse(Input input) {
+    @Deprecated
+    ReportParameters parse(Input input) {
         return null;
     }
 }
