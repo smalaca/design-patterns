@@ -6,15 +6,20 @@ import com.smalaca.adapter.external.google.EnglishTranslator;
 import com.smalaca.adapter.external.google.GoogleTranslator;
 
 public class WordCounter {
+    private final Translator translator;
     private GoogleTranslator googleTranslator;
     private GermanGovWebDictionary germanGovWebDictionary;
 
     public WordCounter(GermanGovWebDictionary germanGovWebDictionary) {
-        this.germanGovWebDictionary = germanGovWebDictionary;
+        this(new GermanTranslator(germanGovWebDictionary));
     }
 
     public WordCounter(GoogleTranslator googleTranslator) {
-        this.googleTranslator = googleTranslator;
+        this(new EnglishTranslator(googleTranslator));
+    }
+
+    public WordCounter(Translator translator) {
+        this.translator = translator;
     }
 
     public void add(String word) {
@@ -27,27 +32,11 @@ public class WordCounter {
 
     @Deprecated
     String translateToPolish(String word) {
-        if (googleTranslator != null) {
-            return new EnglishTranslator(googleTranslator).translateToPolish(word);
-        }
-
-        if (germanGovWebDictionary != null) {
-            return new GermanTranslator(germanGovWebDictionary).translateToPolish(word);
-        }
-
-        return null;
+        return translator.translateToPolish(word);
     }
 
     @Deprecated
     String translateFromPolish(String word) {
-        if (googleTranslator != null) {
-            return new EnglishTranslator(googleTranslator).translateFromPolish(word);
-        }
-
-        if (germanGovWebDictionary != null) {
-            return new GermanTranslator(germanGovWebDictionary).translateFromPolish(word);
-        }
-
-        return null;
+        return translator.translateFromPolish(word);
     }
 }
