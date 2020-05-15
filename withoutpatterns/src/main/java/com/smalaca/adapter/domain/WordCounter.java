@@ -24,7 +24,8 @@ public class WordCounter {
         return 0;
     }
 
-    private String translateToPolish(String word) {
+    @Deprecated
+    String translateToPolish(String word) {
         if (googleTranslator != null) {
             return googleTranslator.toPolish(word);
         }
@@ -36,7 +37,8 @@ public class WordCounter {
         return null;
     }
 
-    private String translateFromPolish(String word) {
+    @Deprecated
+    String translateFromPolish(String word) {
         if (googleTranslator != null) {
             return googleTranslator.toEnglish(word);
         }
