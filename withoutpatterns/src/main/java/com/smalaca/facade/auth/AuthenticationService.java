@@ -1,6 +1,7 @@
 package com.smalaca.facade.auth;
 
 import com.smalaca.facade.chat.ChatService;
+import com.smalaca.facade.communication.CommunicationFacade;
 import com.smalaca.facade.domain.Mail;
 import com.smalaca.facade.domain.MailAddress;
 import com.smalaca.facade.domain.RandomCode;
@@ -10,38 +11,29 @@ import com.smalaca.facade.mail.MailClient;
 import com.smalaca.facade.sms.SmsGate;
 
 public class AuthenticationService {
-    private static final MailAddress APPLICATION_MAIL_ADDRESS_ADDRESS = new MailAddress("application@app.com");
+    private static final MailAddress APPLICATION_MAIL_ADDRESS = new MailAddress("application@app.com");
 
-    private final MailClient mailClient;
-    private final ChatService chatService;
-    private final SmsGate smsGate;
+    private final CommunicationFacade communicationFacade;
 
     public AuthenticationService(MailClient mailClient, ChatService chatService, SmsGate smsGate) {
-        this.mailClient = mailClient;
-        this.chatService = chatService;
-        this.smsGate = smsGate;
+        communicationFacade = new CommunicationFacade(mailClient, chatService, smsGate);
     }
 
     public void login(Request request) {
         if (twoFactorAuthentication(request)) {
-            smsGate.send(aUser().phoneNumber(), aRandomCode().value());
+            communicationFacade.sendSms(aUser(), aRandomCode());
         }
 
         // some logic
 
         if (thirdFailedAttempt()) {
-            String message = "Third failed try to login. Is that really you?";
-            Mail mail = Mail.Builder.aMail(APPLICATION_MAIL_ADDRESS_ADDRESS, aUser().mail())
-                    .title(message)
-                    .content(message)
-                    .build();
-            mailClient.sendMail(mail);
+            communicationFacade.sendMail(aUser(), APPLICATION_MAIL_ADDRESS, "Third failed try to login. Is that really you?");
         }
 
         // some logic
 
         if (successfulLogin()) {
-            chatService.send(aUser(), "Successful login.");
+            communicationFacade.sendChat(aUser(), "Successful login.");
         }
     }
 
