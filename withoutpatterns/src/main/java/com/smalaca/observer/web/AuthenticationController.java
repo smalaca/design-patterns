@@ -19,8 +19,12 @@ public class AuthenticationController {
     public AuthenticationController(
             AuthenticationService authenticationService, AccountSecurityService accountSecurityService,
             AlertNotificationService alertNotificationService) {
+        this(authenticationService, asList(accountSecurityService, alertNotificationService));
+    }
+
+    public AuthenticationController(AuthenticationService authenticationService, List<AuthenticationFailureObserver> observers) {
         this.authenticationService = authenticationService;
-        this.observers = asList(accountSecurityService, alertNotificationService);
+        this.observers = observers;
     }
 
     public void login(String name, Password password) {
