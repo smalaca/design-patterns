@@ -18,6 +18,28 @@ public class Mail {
         this.attachments = builder.attachments;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Mail mail = (Mail) o;
+
+        if (from != null ? !from.equals(mail.from) : mail.from != null) return false;
+        if (to != null ? !to.equals(mail.to) : mail.to != null) return false;
+        if (title != null ? !title.equals(mail.title) : mail.title != null) return false;
+        return content != null ? content.equals(mail.content) : mail.content == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = from != null ? from.hashCode() : 0;
+        result = 31 * result + (to != null ? to.hashCode() : 0);
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (content != null ? content.hashCode() : 0);
+        return result;
+    }
+
     public static class Builder {
         private final List<Attachment> attachments = new ArrayList<>();
         private final MailAddress from;

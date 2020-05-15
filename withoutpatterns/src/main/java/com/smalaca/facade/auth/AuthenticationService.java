@@ -35,7 +35,6 @@ public class AuthenticationService {
                     .title(message)
                     .content(message)
                     .build();
-
             mailClient.sendMail(mail);
         }
 
@@ -46,23 +45,28 @@ public class AuthenticationService {
         }
     }
 
-    private boolean successfulLogin() {
+    @Deprecated
+    boolean successfulLogin() {
         return false;
     }
 
-    private boolean thirdFailedAttempt() {
+    @Deprecated
+    boolean thirdFailedAttempt() {
         return false;
     }
 
-    private RandomCode aRandomCode() {
+    @Deprecated
+    RandomCode aRandomCode() {
         return null;
     }
 
-    private User aUser() {
+    @Deprecated
+    User aUser() {
         return null;
     }
 
-    private boolean twoFactorAuthentication(Request request) {
+    @Deprecated
+    boolean twoFactorAuthentication(Request request) {
         return false;
     }
 }
