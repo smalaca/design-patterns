@@ -24,8 +24,8 @@ public class AuthenticationController {
 
         if (result.failed()) {
             if (result.wasThirdAttempt()) {
-                accountSecurityService.blockAnAccount(result.userId());
-                alertNotificationService.notifyAdminsAboutAttempt(result);
+                accountSecurityService.notifyAboutThirdFailure(result);
+                alertNotificationService.notifyAboutThirdFailure(result);
             }
         } else {
             // some functionality

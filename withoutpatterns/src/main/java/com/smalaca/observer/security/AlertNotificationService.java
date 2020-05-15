@@ -17,4 +17,8 @@ public class AlertNotificationService {
 
         mailClient.send(userGroup.mailAddress(), result.description());
     }
+
+    public void notifyAboutThirdFailure(AuthResult result) {
+        notifyAdminsAboutAttempt(result);
+    }
 }

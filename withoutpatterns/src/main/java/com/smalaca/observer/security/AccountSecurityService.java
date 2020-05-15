@@ -1,5 +1,7 @@
 package com.smalaca.observer.security;
 
+import com.smalaca.observer.auth.AuthResult;
+
 public class AccountSecurityService {
     private final AccountRepository accountRepository;
 
@@ -12,5 +14,9 @@ public class AccountSecurityService {
 
         account.block();
         accountRepository.save(account);
+    }
+
+    public void notifyAboutThirdFailure(AuthResult result) {
+        blockAnAccount(result.userId());
     }
 }
