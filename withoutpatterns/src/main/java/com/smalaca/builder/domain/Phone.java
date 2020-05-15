@@ -1,9 +1,9 @@
 package com.smalaca.builder.domain;
 
-public class Phone {
+class Phone {
     private final String phone;
 
-    public Phone(String phone) {
+    Phone(String phone) {
         this.phone = phone;
     }
 

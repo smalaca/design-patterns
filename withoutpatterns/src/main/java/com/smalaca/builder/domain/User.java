@@ -8,7 +8,7 @@ public class User {
     private Phone phone;
     private Mail mail;
 
-    public User(String login, String password, Name name, Address address) {
+    User(String login, String password, Name name, Address address) {
 
         this.login = login;
         this.password = password;
@@ -16,11 +16,11 @@ public class User {
         this.address = address;
     }
 
-    public void add(Phone phone) {
+    void add(Phone phone) {
         this.phone = phone;
     }
 
-    public void add(Mail mail) {
+    void add(Mail mail) {
         this.mail = mail;
     }
 
