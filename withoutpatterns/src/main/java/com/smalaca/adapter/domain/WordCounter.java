@@ -1,10 +1,11 @@
 package com.smalaca.adapter.domain;
 
 import com.smalaca.adapter.external.dictionary.german.GermanGovWebDictionary;
+import com.smalaca.adapter.external.dictionary.german.GermanTranslator;
+import com.smalaca.adapter.external.google.EnglishTranslator;
 import com.smalaca.adapter.external.google.GoogleTranslator;
 
 public class WordCounter {
-    private static final String POLISH = "PL";
     private GoogleTranslator googleTranslator;
     private GermanGovWebDictionary germanGovWebDictionary;
 
@@ -27,11 +28,11 @@ public class WordCounter {
     @Deprecated
     String translateToPolish(String word) {
         if (googleTranslator != null) {
-            return googleTranslator.toPolish(word);
+            return new EnglishTranslator(googleTranslator).translateToPolish(word);
         }
 
         if (germanGovWebDictionary != null) {
-            return germanGovWebDictionary.reversedTranslate(POLISH, word);
+            return new GermanTranslator(germanGovWebDictionary).translateToPolish(word);
         }
 
         return null;
@@ -40,11 +41,11 @@ public class WordCounter {
     @Deprecated
     String translateFromPolish(String word) {
         if (googleTranslator != null) {
-            return googleTranslator.toEnglish(word);
+            return new EnglishTranslator(googleTranslator).translateFromPolish(word);
         }
 
         if (germanGovWebDictionary != null) {
-            return germanGovWebDictionary.translate(POLISH, word);
+            return new GermanTranslator(germanGovWebDictionary).translateFromPolish(word);
         }
 
         return null;
