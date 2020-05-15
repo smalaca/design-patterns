@@ -14,7 +14,8 @@ class TranslatorsFactoryTest {
 
         Translator actual = translatorsFactory.english();
 
-        assertThat(expected).isSameAs(actual);
+        assertThat(actual).isNotNull();
+        assertThat(actual).isSameAs(expected);
     }
 
     @Test
@@ -23,6 +24,7 @@ class TranslatorsFactoryTest {
 
         Translator actual = translatorsFactory.german();
 
-        assertThat(expected).isSameAs(actual);
+        assertThat(actual).isNotNull();
+        assertThat(actual).isSameAs(expected);
     }
 }

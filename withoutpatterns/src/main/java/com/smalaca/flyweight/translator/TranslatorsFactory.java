@@ -17,7 +17,7 @@ public class TranslatorsFactory {
     }
 
     public Translator german() {
-        if (germanTranslator != null) {
+        if (germanTranslator == null) {
             germanTranslator = new GermanTranslator(new GermanGovWebDictionary());
         }
 
