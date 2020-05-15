@@ -10,7 +10,6 @@ import org.mockito.Mockito;
 
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.mock;
@@ -21,16 +20,12 @@ class UserControllerTest {
     private static final String PASSWORD = UUID.randomUUID().toString();
     private static final String FIRST_NAME = UUID.randomUUID().toString();
     private static final String LAST_NAME = UUID.randomUUID().toString();
-    private static final Name NAME = new Name(FIRST_NAME, LAST_NAME);
     private static final String STREET = UUID.randomUUID().toString();
     private static final String POSTAL_CODE = UUID.randomUUID().toString();
     private static final String CITY = UUID.randomUUID().toString();
     private static final String COUNTRY = UUID.randomUUID().toString();
-    private static final Address ADDRESS = new Address(STREET, POSTAL_CODE, CITY, COUNTRY);
     private static final String PHONE_NUMBER = UUID.randomUUID().toString();
-    private static final Phone PHONE = new Phone(PHONE_NUMBER);
     private static final String EMAIL_ADDRESS = UUID.randomUUID().toString();
-    private static final Mail MAIL = new Mail(EMAIL_ADDRESS);
 
     private final UserDtoFactory userDtoFactory = Mockito.mock(UserDtoFactory.class);
     private final UserRepository userRepository = Mockito.mock(UserRepository.class);
@@ -38,7 +33,7 @@ class UserControllerTest {
 
     @Test
     void shouldCreateUser() {
-        User expected = new User(LOGIN, PASSWORD, NAME, ADDRESS);
+        User expected = userBuilder().build();
         UserDto userDto = getUserDto();
         BDDMockito.given(userDtoFactory.from(REQUEST)).willReturn(userDto);
 
@@ -49,8 +44,9 @@ class UserControllerTest {
 
     @Test
     void shouldCreateUserWithPhone() {
-        User expected = new User(LOGIN, PASSWORD, NAME, ADDRESS);
-        expected.add(PHONE);
+        User expected = userBuilder()
+                .withPhone(PHONE_NUMBER)
+                .build();
         UserDto userDto = getUserDto();
         given(userDto.hasPhone()).willReturn(true);
         given(userDto.phone()).willReturn(PHONE_NUMBER);
@@ -63,8 +59,9 @@ class UserControllerTest {
 
     @Test
     void shouldCreateUserWithMail() {
-        User expected = new User(LOGIN, PASSWORD, NAME, ADDRESS);
-        expected.add(MAIL);
+        User expected = userBuilder()
+                .withMail(EMAIL_ADDRESS)
+                .build();
         UserDto userDto = getUserDto();
         given(userDto.hasMail()).willReturn(true);
         given(userDto.mail()).willReturn(EMAIL_ADDRESS);
@@ -77,9 +74,10 @@ class UserControllerTest {
 
     @Test
     void shouldCreateUserWithMailAndPhone() {
-        User expected = new User(LOGIN, PASSWORD, NAME, ADDRESS);
-        expected.add(MAIL);
-        expected.add(PHONE);
+        User expected = userBuilder()
+                .withMail(EMAIL_ADDRESS)
+                .withPhone(PHONE_NUMBER)
+                .build();
 
         UserDto userDto = getUserDto();
         given(userDto.hasPhone()).willReturn(true);
@@ -92,6 +90,14 @@ class UserControllerTest {
         controller.create(REQUEST);
 
         then(userRepository).should().save(expected);
+    }
+
+    private UserBuilder userBuilder() {
+        return new UserBuilder()
+                .withLogin(LOGIN)
+                .withPassword(PASSWORD)
+                .withName(FIRST_NAME, LAST_NAME)
+                .withAddress(STREET, POSTAL_CODE, CITY, COUNTRY);
     }
 
     private UserDto getUserDto() {
