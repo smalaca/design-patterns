@@ -6,17 +6,21 @@ import com.smalaca.observer.security.AccountSecurityService;
 import com.smalaca.observer.security.AlertNotificationService;
 import com.smalaca.observer.security.Password;
 
+import javax.swing.plaf.basic.BasicListUI;
+import java.util.Arrays;
+import java.util.List;
+
+import static java.util.Arrays.asList;
+
 public class AuthenticationController {
     private final AuthenticationService authenticationService;
-    private final AccountSecurityService accountSecurityService;
-    private final AlertNotificationService alertNotificationService;
+    private final List<AuthenticationFailureObserver> observers;
 
     public AuthenticationController(
             AuthenticationService authenticationService, AccountSecurityService accountSecurityService,
             AlertNotificationService alertNotificationService) {
         this.authenticationService = authenticationService;
-        this.accountSecurityService = accountSecurityService;
-        this.alertNotificationService = alertNotificationService;
+        this.observers = asList(accountSecurityService, alertNotificationService);
     }
 
     public void login(String name, Password password) {
@@ -24,8 +28,7 @@ public class AuthenticationController {
 
         if (result.failed()) {
             if (result.wasThirdAttempt()) {
-                accountSecurityService.notifyAboutThirdFailure(result);
-                alertNotificationService.notifyAboutThirdFailure(result);
+                observers.forEach(observer -> observer.notifyAboutThirdFailure(result));
             }
         } else {
             // some functionality
