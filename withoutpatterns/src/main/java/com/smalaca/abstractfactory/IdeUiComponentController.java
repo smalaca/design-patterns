@@ -1,20 +1,17 @@
 package com.smalaca.abstractfactory;
 
 import com.smalaca.abstractfactory.domain.Project;
-import com.smalaca.abstractfactory.ui.ThemeTypes;
-import com.smalaca.abstractfactory.ui.Toolbar;
-import com.smalaca.abstractfactory.ui.ToolbarIcons;
-import com.smalaca.abstractfactory.ui.Window;
+import com.smalaca.abstractfactory.ui.*;
 import com.smalaca.abstractfactory.ui.dark.DarkToolbar;
 import com.smalaca.abstractfactory.ui.dark.DarkWindow;
 import com.smalaca.abstractfactory.ui.light.LightToolbar;
 import com.smalaca.abstractfactory.ui.light.LightWindow;
 
 public class IdeUiComponentController {
-    private final ThemeTypes themeType;
+    private final ThemeTypesChoice themeTypesChoice;
 
-    public IdeUiComponentController(ThemeTypes themeType) {
-        this.themeType = themeType;
+    public IdeUiComponentController(ThemeTypesChoice themeTypesChoice) {
+        this.themeTypesChoice = themeTypesChoice;
     }
 
     public void createProject() {
@@ -32,7 +29,7 @@ public class IdeUiComponentController {
     }
 
     private Window createWindow() {
-        switch (themeType) {
+        switch (themeTypesChoice.get()) {
             case DARK:
                 return new DarkWindow();
             case LIGHT:
@@ -52,7 +49,7 @@ public class IdeUiComponentController {
     }
 
     private Toolbar createToolbar(ToolbarIcons icons) {
-        switch (themeType) {
+        switch (themeTypesChoice.get()) {
             case DARK:
                 return new DarkToolbar(icons);
             case LIGHT:
