@@ -1,4 +1,4 @@
 package com.smalaca.templatemethod.report;
 
-public interface ReportParameters {
+public class ReportParameters {
 }

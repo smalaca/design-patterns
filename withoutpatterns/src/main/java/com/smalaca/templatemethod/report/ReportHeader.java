@@ -1,4 +1,13 @@
 package com.smalaca.templatemethod.report;
 
-public interface ReportHeader {
+public class ReportHeader {
+    private final String value;
+
+    public ReportHeader(String value) {
+        this.value = value;
+    }
+
+    String value() {
+        return value;
+    }
 }
