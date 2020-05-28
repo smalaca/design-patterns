@@ -4,15 +4,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class DesignPattersTest {
+class DesignPatternsTest {
     @Test
     void shouldBeFun() {
-        DesignPatters designPatters = new DesignPatters();
+        DesignPatterns designPatterns = new DesignPatterns();
 
-        assertTrue(designPatters.areFun());
+        assertTrue(designPatterns.areFun());
     }
 
-    private class DesignPatters {
+    private static class DesignPatterns {
         boolean areFun() {
             return true;
         }
