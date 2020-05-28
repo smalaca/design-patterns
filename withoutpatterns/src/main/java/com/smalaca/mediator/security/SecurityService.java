@@ -1,8 +1,8 @@
 package com.smalaca.mediator.security;
 
 import com.smalaca.mediator.accountancy.AccountancyHistory;
-import com.smalaca.mediator.usermanagement.AccountService;
 import com.smalaca.mediator.usermanagement.Account;
+import com.smalaca.mediator.usermanagement.AccountService;
 
 public class SecurityService {
     private final AccountancyHistory accountancyHistory;

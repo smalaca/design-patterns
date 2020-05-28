@@ -24,7 +24,7 @@ public class ReportFactory {
     }
 
     private ReportSignature generateSignature() {
-        return null;
+        return new ReportSignature("signature");
     }
 
     private ReportFooter generateFooter(ReportParameters reportParameters, ReportType type) {
@@ -39,11 +39,11 @@ public class ReportFactory {
     }
 
     private ReportFooter generateXmlFooter(ReportParameters reportParameters) {
-        return null;
+        return new ReportFooter("xml footer");
     }
 
     private ReportFooter generatePdfFooter(ReportParameters reportParameters) {
-        return null;
+        return new ReportFooter("pdf footer");
     }
 
     private ReportContent generateContent(ReportParameters reportParameters, ReportType type) {
@@ -58,11 +58,11 @@ public class ReportFactory {
     }
 
     private ReportContent generateXmlContent(ReportParameters reportParameters) {
-        return null;
+        return new ReportContent("xml content");
     }
 
     private ReportContent generatePdfContent(ReportParameters reportParameters) {
-        return null;
+        return new ReportContent("pdf content");
     }
 
     private ReportHeader generateHeader(ReportParameters reportParameters, ReportType type) {
@@ -77,18 +77,18 @@ public class ReportFactory {
     }
 
     private ReportHeader generateXmlHeader(ReportParameters reportParameters) {
-        return null;
+        return new ReportHeader("xml header");
     }
 
     private ReportHeader generatePdfHeader(ReportParameters reportParameters) {
-        return null;
+        return new ReportHeader("pdf header");
     }
 
     private boolean valid(ReportParameters reportParameters) {
-        return false;
+        return true;
     }
 
     private ReportParameters parse(Input input) {
-        return null;
+        return new ReportParameters();
     }
 }

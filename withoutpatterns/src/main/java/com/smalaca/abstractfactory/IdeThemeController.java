@@ -1,11 +1,16 @@
 package com.smalaca.abstractfactory;
 
 import com.smalaca.abstractfactory.ui.ThemeTypes;
+import com.smalaca.abstractfactory.ui.ThemeTypesChoice;
 
 public class IdeThemeController {
-    private ThemeTypes themeType;
+    private final ThemeTypesChoice themeTypesChoice;
 
-    public void chooseTemplate(ThemeTypes type) {
-        themeType = type;
+    public IdeThemeController(ThemeTypesChoice themeTypesChoice) {
+        this.themeTypesChoice = themeTypesChoice;
+    }
+
+    public void chooseTemplate(ThemeTypes themeTypes) {
+        themeTypesChoice.change(themeTypes);
     }
 }

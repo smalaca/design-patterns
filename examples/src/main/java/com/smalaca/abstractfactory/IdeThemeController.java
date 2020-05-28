@@ -1,9 +1,9 @@
 package com.smalaca.abstractfactory;
 
-import com.smalaca.abstractfactory.ui.dark.DarkThemeAbstractFactory;
 import com.smalaca.abstractfactory.ui.IdeThemeAbstractFactory;
-import com.smalaca.abstractfactory.ui.light.LightThemeAbstractFactory;
 import com.smalaca.abstractfactory.ui.ThemeTypes;
+import com.smalaca.abstractfactory.ui.dark.DarkThemeAbstractFactory;
+import com.smalaca.abstractfactory.ui.light.LightThemeAbstractFactory;
 
 public class IdeThemeController {
     private IdeThemeAbstractFactory ideThemeAbstractFactory;

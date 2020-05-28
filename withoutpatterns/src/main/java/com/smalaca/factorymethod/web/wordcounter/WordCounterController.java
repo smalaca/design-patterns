@@ -1,18 +1,18 @@
 package com.smalaca.factorymethod.web.wordcounter;
 
-import com.smalaca.factorymethod.domain.Language;
 import com.smalaca.factorymethod.domain.WordCounter;
 import com.smalaca.factorymethod.translator.dictionary.german.GermanGovWebDictionary;
 import com.smalaca.factorymethod.translator.google.GoogleTranslator;
+import com.smalaca.factorymethod.web.LanguageChoice;
 import com.smalaca.factorymethod.wordcounter.english.EnglishWordCounter;
 import com.smalaca.factorymethod.wordcounter.german.GermanWordCounter;
 
 public class WordCounterController {
-    private Language language;
+    private final LanguageChoice languageChoice;
     private WordCounter wordCounter;
 
-    public WordCounterController(Language language) {
-        this.language = language;
+    public WordCounterController(LanguageChoice languageChoice) {
+        this.languageChoice = languageChoice;
     }
 
     public void add(String word) {
@@ -25,7 +25,7 @@ public class WordCounterController {
 
     private WordCounter aWordCounter() {
         if (wordCounter == null) {
-            switch (language) {
+            switch (languageChoice.get()) {
                 case ENG:
                     GoogleTranslator translator = new GoogleTranslator();
                     wordCounter = new EnglishWordCounter(translator);
