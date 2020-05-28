@@ -1,7 +1,7 @@
 package com.smalaca.mediator.withoutinterface.mediator;
 
-import com.smalaca.mediator.withoutinterface.colleague.first.FirstColleague;
 import com.smalaca.mediator.withoutinterface.colleague.Input;
+import com.smalaca.mediator.withoutinterface.colleague.first.FirstColleague;
 import com.smalaca.mediator.withoutinterface.colleague.second.SecondColleague;
 import com.smalaca.mediator.withoutinterface.colleague.third.ThirdColleague;
 

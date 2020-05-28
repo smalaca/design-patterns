@@ -1,7 +1,10 @@
 package com.smalaca.abstractfactory;
 
 import com.smalaca.abstractfactory.domain.Project;
-import com.smalaca.abstractfactory.ui.*;
+import com.smalaca.abstractfactory.ui.ThemeTypesChoice;
+import com.smalaca.abstractfactory.ui.Toolbar;
+import com.smalaca.abstractfactory.ui.ToolbarIcons;
+import com.smalaca.abstractfactory.ui.Window;
 import com.smalaca.abstractfactory.ui.dark.DarkToolbar;
 import com.smalaca.abstractfactory.ui.dark.DarkWindow;
 import com.smalaca.abstractfactory.ui.light.LightToolbar;

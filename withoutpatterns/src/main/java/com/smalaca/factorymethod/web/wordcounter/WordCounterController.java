@@ -1,6 +1,5 @@
 package com.smalaca.factorymethod.web.wordcounter;
 
-import com.smalaca.factorymethod.domain.Language;
 import com.smalaca.factorymethod.domain.WordCounter;
 import com.smalaca.factorymethod.translator.dictionary.german.GermanGovWebDictionary;
 import com.smalaca.factorymethod.translator.google.GoogleTranslator;
